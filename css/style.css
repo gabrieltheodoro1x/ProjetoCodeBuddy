@@ -1,1 +1,47 @@
-/* Comentario */
+body{
+    background-color: black;
+}
+
+#header{
+    background-color: rgb(41, 41, 145);
+}
+
+#menu{
+    position:absolute ;
+    left: 25%;
+    list-style: none;
+    padding: 0%;
+    background-color: rgb(41, 41, 145);
+    box-sizing: border-box;
+    border: 2px solid ;
+    border-radius: 4px;
+    font-family: sans-serif;
+    font-size: inherit;
+    padding: 0.25em 0.5em;
+    border: 1px solid ;
+    border-radius: 4px;
+    transition: 180ms box-shadow ease-in-out;
+    border-color: rgb(120, 190, 236);
+}
+
+#menu  li{
+    display: inline;
+}
+
+#menu  li  a{
+    color: white;
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    display: inline;
+}
+
+img{
+    position: absolute;
+    padding: 0%;
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif ;
+    color: white;
+}
