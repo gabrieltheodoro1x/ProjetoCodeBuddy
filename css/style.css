@@ -122,59 +122,74 @@ p{
 
 
 #li1 {
-    box-sizing: border-box;
-    border: 2px solid ;
     border-radius: 4px;
     font-size: inherit;
     padding: 0.25em 0.5em;
-    border: 4px solid ;
     border-radius: 4px;
-    transition: 180ms box-shadow ease-in-out;
-    border-color: #F1EC40;
+    box-shadow: 0 0 1px 0px #e2e2e2;
+    position:relative; 
 }
 
 #li2 {
-    box-sizing: border-box;
-    border: 2px solid ;
     border-radius: 4px;
     font-size: inherit;
     padding: 0.25em 0.5em;
-    border: 4px solid ;
     border-radius: 4px;
-    transition: 180ms box-shadow ease-in-out;
-    border-color: #F1EC40;
-    
+    box-shadow: 0 0 1px 0px #e2e2e2;
+    position:relative; 
 }
 
 #li3 {
-    box-sizing: border-box;
-    border: 2px solid ;
     border-radius: 4px;
     font-size: inherit;
     padding: 0.25em 0.5em;
-    border: 4px solid ;
     border-radius: 4px;
-    transition: 180ms box-shadow ease-in-out;
-    border-color: #F1EC40;
+    box-shadow: 0 0 1px 0px #e2e2e2;
+    position:relative; 
 }
 
 #li4 {
-    box-sizing: border-box;
-    border: 2px solid ;
     border-radius: 4px;
     font-size: inherit;
     padding: 0.25em 0.5em;
-    border: 4px solid ;
     border-radius: 4px;
-    transition: 180ms box-shadow ease-in-out;
-    border-color: #F1EC40;
+    box-shadow: 0 0 1px 0px #e2e2e2;
+    position:relative; 
 }
 
-#li1:focus,
-#li1:hover {
-    box-shadow: 0px 0px 20px #F1EC40;
-    outline: 10px solid transparent;
+#li1::after,
+#li1::before {
+content: "" ;    
+position:absolute;
+bottom: 0px;    
+top: 0px;   
+left: 0px;
+right: 0px; 
+transition: transform 0.3s ease-in-out;
 }
+
+#li1::before{
+    border-left: 1px solid #F1EC40;
+    border-right: 1px solid #F1EC40;
+    transform: scaleY(0);
+}
+
+#li1::after{
+    border-top: 1px solid #F1EC40;
+    border-bottom: 1px solid #F1EC40;
+    transform: scaleX(0);
+}
+
+#li1:hover::before{
+    transform: scaleY(1);
+}
+
+#li1:hover::after{
+    transform: scaleY(1);
+}
+
+
+
 
 #:focus,
 #:hover {
@@ -254,7 +269,17 @@ strong{
     color: #F1EC40;
 }
 
-#header{
-    position: fixed;
+#main{
+    position: absolute;
+    top: 20%;
+}
 
+
+#header{
+    position:fixed;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    z-index: +1000;
+    
 }
