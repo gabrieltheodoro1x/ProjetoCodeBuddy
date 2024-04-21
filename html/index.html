@@ -5,50 +5,110 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"  href="../css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <link rel="stylesheet"  href="../css/weather.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <title>CodeBuddy</title>
 </head>
-<body style="background-color: black ;">
+<body style="background-color: #343a40;">
     
 
     <header>
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <img src="../imagens/logo.png"  height="100px"> 
-            <ul id="menu"> 
-                <li id="li1"><a href="index.html">HOME</a><li>
-                <li id="li2"><a href="https://www.youtube.com/channel/UCpYr3yZhGnMIg7fBYS0BxpA">CRIAR SUA CONTA</a><li>
-                <li id="li3"><a href="about.html">SOBRE NÓS</a><li>
-                <li id="li4"><a href="about2.html">FALE CONOSCO</a><li>         
-            </ul>
-        </nav>
+       <div id="header"> 
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                <img class="imgs" src="../imagens/loo.png"  height="100px"> 
+                <ul id="menu"> 
+                    <li id="li1"><a href="index.html">HOME</a>
+                        <ul>
+                            
+                            <li id="id1"><a href="index.html">Notícias</a></li>
+                        </ul>    
+                    <li>  
+                    <li id="li2"><a href="about3.html">CRIAR SUA CONTA</a><li>
+                    <li id="li3"><a href="about.html">SOBRE NÓS</a><li>
+                    <li id="li4"><a href="about2.html">FALE CONOSCO</a><li>         
+                </ul>
+            </nav>
+       </div> 
     <header>
 
-    <main>
-    
-        <h1>Principais noticias</h1>
+    <main style="display: flex; flex-direction: column;">
 
-        <h2>Presidente dos EUA alerta para “guerra real” como resposta a ataques cibernéticos.</h2>
-
-        
-        <p id="demo" style="display:none"> Joe Biden afirma que uma guerra com outra grande potência seria o resultado mais provável de ataque cibernético de “grandes consequências”. Biden quer posicionar os EUA um passo à frente de ameaças, colocando pressão na comunidade de inteligência do país. As informações são do site The Register.</p>
-
-        <button type="button" onclick="document.getElementById('demo').style.display='block' ">Ver noticia</button>
-        <button type="button" onclick="document.getElementById('demo').style.display='none' ">Fechar</button>
-        
+        <div id="pre-main">
+            <div style="display: flex;"> <!-- Adicionando flexbox aqui -->
+                <img class="imgs" id="pre" src="../imagens/premain.png" alt="Pre-Main">
+                <p class="not p">As melhores informações</p>
+            </div>
+        </div>
         
         
 
 
     </main>
+    <div id="boy">
+        <div id="visi" class="container">
+            <div class="form">
+              <h3>Confira o clima de uma <span id="cida">cidade</span>:</h3>
+              <div class="form-input-container">
+                <input
+                type="text"
+                placeholder="Digite o nome da cidade"
+                id="city-input"
+              />
+              <button id="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+              </div>
+            </div>
+            <div id="weather-data" class="hide">
+              <h2><i class="fa-solid fa-location-dot"></i> <span id="city"></span> <img id="country"></img></h2>
+              <p id="temperature"><span></span>&deg;C</p>
+              <div id="description-container">
+                <p id="description"></p>
+                <img id="weather-icon" src="" alt="Condições atuais">
+              </div>
+              <div id="details-container">
+                <p id="umidity">
+                  <i class="fa-solid fa-droplet"></i> 
+                  <span></span>
+                </p>
+                <p id="wind">
+                  <i class="fa-solid fa-wind"></i>
+                  <span></span>
+                </p>
+              </div>
+            </div>
+            <div id="error-message" class="hide">
+              <p>Não foi possível encontrar o clima de uma cidade com este nome.</p>
+            </div>
+            <div id="loader" class="hide">
+              <i class="fa-solid fa-spinner"></i>
+            </div>
+            <div id="suggestions">
+              <button id="viena">Viena</button>
+              <button id="copenhague">Copenhague</button>
+              <button id="zurique">Zurique</button>
+              <button id="vancouver">Vancouver</button>
+              <button id="genebra">Genebra</button>
+              <button id="frankfurt">Frankfurt</button>
+              <button id="osaka">Osaka</button>
+              <button id="maceio">Maceió</button>
+            </div>
+          </div>
+    </div>
 
 
 
     <footer>
     </footer>
-
+<script src="../js/app.js"></script>
+<script src="../js/clima.js"></script>
 </body>
 </html>
